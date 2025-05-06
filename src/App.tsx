@@ -19,13 +19,49 @@ function App() {
     });
 
     mapRef.current.on('load', () => {
-      // Gebruik mapRef.current.* om de Mapbox API toe te passen
+      mapRef.current.addSource('neighbourhoods', {
+        type: 'geojson',
+        data: './neighbourhoods.geojson',
+      });
 
-      // 1) Laad de GeoJSON-bestanden
+      mapRef.current.addLayer({
+        id: 'neighbourhoods-layer',
+        type: 'fill',
+        source: 'neighbourhoods',
+        paint: {
+          'fill-color': '#0080ff',
+          'fill-opacity': 0.5,
+        },
+      });
 
-      // 2) Geef de neighbourhoods styles
+      mapRef.current.addLayer({
+        id: 'neighbourhoods-border',
+        type: 'line',
+        source: 'neighbourhoods',
+        paint: {
+          'line-color': '#000000',
+          'line-width': 2,
+          'line-opacity': 0.8,
+        },
+      });
 
-      // 3) Geef de points styles
+      mapRef.current.addSource('my-points', {
+        type: 'geojson',
+        data: './points.geojson',
+      });
+
+      mapRef.current.addLayer({
+        id: 'my-points-layer',
+        type: 'circle',
+        source: 'my-points',
+        paint: {
+          'circle-radius': 6,
+          'circle-color': '#ff0000',
+          'circle-stroke-color': '#ffffff',
+          'circle-stroke-width': 1,
+          'circle-opacity': 0.9,
+        },
+      });
     })
 
     return () => {

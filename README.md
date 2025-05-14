@@ -15,6 +15,8 @@ npm run dev
 
 De opdracht is om de twee GeoJSON sources toe te voegen en deze te visualiseren!
 
+Gebruik de API Reference van Mapbox voor informatie en voorbeelden: https://docs.mapbox.com/mapbox-gl-js/api/
+
 Stappen:
 1) Voeg de neighbourhoods source toe
 2) Geef de neighbourhoods een highlight layer

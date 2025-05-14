@@ -21,11 +21,15 @@ function App() {
     mapRef.current.on('load', () => {
       // Gebruik mapRef.current.* om de Mapbox API toe te passen
 
-      // 1) Laad de GeoJSON-bestanden
+      // 1) Voeg de neighbourhoods source toe
 
-      // 2) Geef de neighbourhoods styles
+      // 2) Geef de neighbourhoods een highlight layer
 
-      // 3) Geef de points styles
+      // 3) Geef de neighbourhoods een rand layer
+
+      // 4) Voeg de points source toe
+
+      // 5) Voeg de points visueel toe met een layer
     })
 
     return () => {
